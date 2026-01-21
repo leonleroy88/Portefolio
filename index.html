@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Léon Leroy – Mechatronics Engineer | Portfolio</title>
+  <title>Léon LEROY – Mechatronics Engineer | Portfolio</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
@@ -25,7 +25,10 @@
 
 <!-- ================= NAVBAR ================= -->
 <header class="navbar">
-  <div class="logo">Léon Leroy</div>
+  <div class="brand">
+  <div class="logo-box">LL</div>
+  <div class="logo-text">Léon LEROY</div>
+</div>
   <nav>
     <a href="#home" class="nav-btn">Home</a>
     <a href="#projects" class="nav-btn">Projects</a>
@@ -38,79 +41,125 @@
 </header>
 
 <!-- ================= HOME ================= -->
-<section id="home" class="hero hero-vertical section-home">
+<section id="home" class="hero section-home">
 
+  <div class="hero-intro reveal">
 
-  <div class="card reveal float profile-card">
-    <img src="assets/images/Photo_leon.jpg" alt="Leon Leroy" class="profile-pic">
+    <div class="hero-left">
+      <img src="assets/images/Photo_leon.jpg"
+           alt="Leon Leroy"
+           class="profile-pic large">
+    </div>
 
-    <h1 class="name">Léon <span>Leroy</span></h1>
+    <div class="hero-right">
+      <h1 class="name">Léon <span>Leroy</span></h1>
 
-    <p class="subtitle">
-      Mechatronics Engineer · HealthTech Master's Student
-    </p>
-  </div>
+      <p class="subtitle">
+        Mechatronics Engineer · HealthTech Master's Student
+      </p>
 
-  <div class="card reveal delay float">
-    <p>
-      Mechatronics Engineer graduated from INSA Strasbourg,
-      currently pursuing an International Research Master in HealthTech.
-    </p>
+      <p class="hero-desc">
+        Mechatronics Engineer graduated from INSA Strasbourg,
+        currently pursuing an International Research Master in HealthTech,
+        with strong interest in robotics and medical devices.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="hero-btn primary">
+          View Projects
+        </a>
+        <a href="#experience" class="hero-btn secondary">
+          Experience
+        </a>
+      </div>
+    </div>
+
   </div>
 
 </section>
+
 
 <!-- ================= PROJECTS ================= -->
 <section id="projects" class="hero section-projects">
 
- <div class="projects-grid">
-    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-  </div>
+  <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
 
-  <!-- VTOL DRONE -->
-  <div class="card reveal delay">
-    <img src="assets/images/vtol.jpg" alt="VTOL Drone Project" class="project-img">
+  <div class="projects-grid">
 
-    <h3>VTOL Drone Design Project</h3>
-    <p>
-      Design and development of a VTOL (Vertical Take-Off and Landing) drone.
-      I worked extensively on CAD design, including the modeling of the nacelle
-      and the fuselage structure.
-    </p>
-    <div class="skills">
-  <span class="skill">CAD</span>
-  <span class="skill">CREO</span>
-  <span class="skill">Matlab</span>
-  <span class="skill">Aerodynamics</span>
-  <span class="skill">Mechanical Design</span>
-</div>
+    <!-- VTOL DRONE -->
+    <div class="project-card reveal">
+      <div class="project-header vtol">
+        <span class="project-badge">FEATURED</span>
+        <p class="project-category">Aerospace / Mechanical Design</p>
+      </div>
 
-  </div>
+      <div class="project-body">
+        <h3>VTOL Drone Design Project</h3>
 
-  <!-- MASTER PROJECT -->
-  <div class="card reveal delay">
-    <img src="assets/images/echo_robot.jpg"
-         alt="Robotic TOE Probe Project"
-         class="project-img">
+        <p>
+          Design and development of a VTOL (Vertical Take-Off and Landing) drone.
+          Focus on aerodynamic optimization, CAD modeling and mechanical
+          integration.
+        </p>
 
-    <h3>Robotic TOE Probe for Interventional Echocardiography</h3>
-    <p>
-      Master's research project focused on the robotization of a
-      Transesophageal Echocardiography (TOE) probe for interventional procedures.
-      The goal is to improve precision, ergonomics, and safety during cardiac
-      interventions.
-    </p>
-    <div class="skills">
-  <span class="skill">ROS2</span>
-  <span class="skill">CREO</span>
-  <span class="skill">Robotics</span>
-  <span class="skill">Medical Devices</span>
-  <span class="skill">Control Systems</span>
-</div>
+        <ul class="project-list">
+          <li>Nacelle and fuselage CAD design</li>
+          <li>Aerodynamic analysis</li>
+          <li>Mechanical integration</li>
+        </ul>
+
+        <div class="skills">
+          <span class="skill">CAD</span>
+          <span class="skill">CREO</span>
+          <span class="skill">Matlab</span>
+          <span class="skill">Aerodynamics</span>
+        </div>
+
+         <a href="vtol.html" class="project-btn">
+    View Details →
+  </a>
+      </div>
+    </div>
+
+    <!-- TOE PROBE -->
+    <div class="project-card reveal delay">
+      <div class="project-header echo">
+        <span class="project-badge">FEATURED</span>
+        <p class="project-category">Robotics / Medical Devices</p>
+      </div>
+
+      <div class="project-body">
+        <h3>Robotic TOE Probe for Echocardiography</h3>
+
+        <p>
+          Master's research project focused on the robotization of a
+          Transesophageal Echocardiography (TOE) probe to improve precision,
+          ergonomics and safety during cardiac interventions.
+        </p>
+
+        <ul class="project-list">
+          <li>Robotic actuation and control</li>
+          <li>Medical device integration</li>
+          <li>Research-oriented development</li>
+        </ul>
+
+        <div class="skills">
+          <span class="skill">ROS2</span>
+          <span class="skill">Robotics</span>
+          <span class="skill">Medical Devices</span>
+          <span class="skill">Control Systems</span>
+        </div>
+
+         <a href="probe.html" class="project-btn">
+    View Details →
+  </a>
+      </div>
+    </div>
 
   </div>
 
 </section>
+
 
 <!-- ================= EXPERIENCE ================= -->
 <section id="experience" class="hero section-experience">
@@ -167,7 +216,53 @@
   </div>
 
 </section>
+<footer class="main-footer">
+  <div class="footer-content">
+    
+    <div class="footer-col">
+      <div class="brand footer-brand">
+        <div class="logo-box">LL</div>
+        <div class="logo-text">Léon Leroy</div>
+      </div>
+      <p>
+        Mechatronics Engineer passionate about robotics, 
+        medical devices and innovation in HealthTech.
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:tonemail@example.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
 
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="assets/cv/CV_LéonLEROY_FR_V2-1.pdf">Resume</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Featured Projects</h4>
+      <ul>
+        <li><a href="#">VTOL Drone</a></li>
+        <li><a href="#">Robotic TOE Probe</a></li>
+        <li><a href="#">Silicone R&D</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Location</h4>
+      <p><i class="fa-solid fa-location-dot"></i> Strasbourg, France</p>
+      <p class="copyright">
+        &copy; 2026 Léon Leroy.<br>Built with HTML/CSS.
+      </p>
+    </div>
+
+  </div>
+</footer>
 <script src="js/scroll.js"></script>
 </body>
 </html>
