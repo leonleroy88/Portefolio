@@ -979,3 +979,23 @@ section {
   max-width: 75%;
   height: auto;
 }
+.linkedin-inline {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+
+.linkedin-inline:hover {
+  opacity: 0.9;
+}
+.title-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(15,23,42,0.25),
+    rgba(15,23,42,0.05)
+  );
+}
