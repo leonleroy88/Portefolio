@@ -756,6 +756,7 @@ section {
 .project-hero {
   background: #f8fafc;
   padding: 80px 20px;
+  padding-bottom: 3rem;
 }
 
 .project-hero-card {
@@ -793,10 +794,14 @@ section {
 }
 
 .project-detail-img {
-  width: 100%;
-  margin-top: 24px;
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto 0;
   border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 .project-content {
   max-width: 1000px;
   margin: 80px auto;
@@ -810,6 +815,8 @@ section {
   border-radius: 18px;
   padding: 40px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .content-card h2 {
@@ -935,4 +942,40 @@ section {
     rgba(15,23,42,0.25),
     rgba(15,23,42,0.05)
   );
+}
+.project-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+.project-hero-image-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-hero-img {
+  max-width: 75%;
+  height: auto;
 }
