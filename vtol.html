@@ -3,40 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <title>VTOL Drone Project – Léon Leroy</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
-  <a href="../index.html" class="nav-btn">← Back</a>
+  <a href="index.html" class="nav-btn">← Back</a>
 </header>
 
-<section class="hero section-projects">
+<!-- ===== PROJECT HERO ===== -->
+<section class="project-hero">
 
-  <div class="card reveal">
+  <div class="project-hero-card">
+
+    <!-- Tags -->
+    <div class="project-tags">
+      <span class="project-chip">Aerospace</span>
+      <span class="project-chip featured">FEATURED</span>
+    </div>
+
+    <!-- Title -->
     <h1>VTOL Drone Design Project</h1>
-    <p>
-      Full VTOL drone development project focused on mechanical design,
-      aerodynamics and system integration.
+
+    <!-- Intro -->
+    <p class="project-intro">
+      Complete mechanical design of a VTOL (Vertical Take-Off and Landing) drone,
+      with a strong focus on aerodynamics, CAD modeling and system integration.
     </p>
+
+    <!-- HERO IMAGE -->
+    <div class="project-hero-image-wrapper">
+      <img
+        src="assets/images/vtol_entier.png"
+        alt="VTOL Drone Full Design"
+        class="project-hero-img"
+      >
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PROJECT DETAILS ===== -->
+<section class="project-content">
+
+  <!-- OVERVIEW + HIGHLIGHTS -->
+  <div class="project-grid">
+
+    <!-- OVERVIEW -->
+    <div class="content-card">
+      <h2>Overview</h2>
+
+      <p>
+        This project involved the complete mechanical design of a VTOL drone,
+        from early concept to detailed CAD models.
+        Emphasis was placed on aerodynamic efficiency, modularity
+        and system-level integration.
+      </p>
+
+      <p>
+        The project was carried out using professional engineering tools
+        and simulation environments.
+      </p>
+    </div>
+
+    <!-- KEY HIGHLIGHTS -->
+    <div class="content-card highlights">
+      <h2>Key Highlights</h2>
+
+      <ul class="highlight-list">
+        <li>Full mechanical design using <strong>CREO</strong></li>
+        <li>Nacelle and fuselage CAD development</li>
+        <li>Aerodynamic optimization workflow</li>
+        <li>Simulation with <strong>MATLAB</strong> & MotionView</li>
+        <li>Mechanical system integration</li>
+      </ul>
+    </div>
+
   </div>
 
-  <div class="card reveal delay">
-    <img src="../assets/images/projects/vtol/1.jpg" class="project-img">
-    <img src="../assets/images/projects/vtol/2.jpg" class="project-img">
-  </div>
+  <!-- NACELLE SECTION -->
+  <div class="content-card wide">
+    <h2>Nacelle Design Focus</h2>
 
-  <div class="card reveal delay">
-    <h3>My contributions</h3>
-    <ul>
-      <li>CAD design (nacelle, fuselage)</li>
-      <li>Aerodynamic analysis</li>
-      <li>Mechanical integration</li>
-    </ul>
+    <p>
+      The nacelle was designed to balance aerodynamic performance,
+      structural robustness and ease of integration.
+      Several design iterations were evaluated through simulations
+      and CAD refinements.
+    </p>
+
+    <img
+      src="assets/images/vtol_nacelle.png"
+      alt="VTOL Nacelle Design"
+      class="project-detail-img"
+    >
   </div>
 
 </section>
-<script src="../js/scroll.js"></script>
+
+<script src="js/scroll.js"></script>
 </body>
 </html>
