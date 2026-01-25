@@ -4,61 +4,62 @@
   <meta charset="UTF-8">
   <title>Robotic TOE Probe – Léon Leroy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- (Optionnel) Font Inter pour un rendu + premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="project-page">
 
 <!-- ===== NAVBAR ===== -->
-<header class="navbar">
-  <a href="index.html" class="nav-btn">← Back</a>
+<header class="navbar project-navbar">
+  <a href="index.html" class="nav-btn back-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Back</span>
+  </a>
 </header>
 
 <!-- ===== PROJECT HERO ===== -->
-<section class="project-hero">
+<section class="project-hero project-hero--toep">
   <div class="project-hero-card">
 
-    <!-- Tags -->
     <div class="project-tags">
       <span class="project-chip">Biomedical Robotics</span>
       <span class="project-chip featured">RESEARCH</span>
     </div>
 
-    <!-- Title -->
-    <h1>Robotization of a Trans-Oesophageal Echocardiography Probe</h1>
+    <h1 class="project-title">Robotization of a Trans-Oesophageal Echocardiography Probe</h1>
 
-    <!-- Intro -->
     <p class="project-intro">
       Design of a robotic system for remote manipulation of a trans-oesophageal
       echocardiography (TOE) probe, aiming to improve safety, precision
       and ergonomics during interventional cardiology procedures.
     </p>
 
-    <!-- PROJECT STATS -->
     <div class="project-stats">
       <div class="stat">
         <span class="stat-value">Medical Robotics</span>
         <span class="stat-label">Application Field</span>
       </div>
-
       <div class="stat">
         <span class="stat-value">Remote Control</span>
         <span class="stat-label">System Approach</span>
       </div>
-
       <div class="stat">
         <span class="stat-value">Image-Guided</span>
         <span class="stat-label">Navigation</span>
       </div>
     </div>
 
-    <!-- IHU LOGO -->
     <div class="project-hero-image-wrapper">
       <img
         src="assets/images/ihu_logo.jpg"
         alt="IHU Logo"
-        class="project-hero-img"
-        style="max-width: 220px;"
+        class="project-hero-logo"
       >
     </div>
 
@@ -68,20 +69,15 @@
 <!-- ===== PROJECT DETAILS ===== -->
 <section class="project-content">
 
-  <!-- OVERVIEW + CONTEXT -->
   <div class="project-grid">
 
-    <!-- OVERVIEW -->
     <div class="content-card">
       <h2>Project Context</h2>
-
       <p>
         Interventional cardiology enables minimally invasive treatment
-        of complex structural heart diseases.
-        Trans-oesophageal echocardiography (TOE) plays a central role
-        in guiding these procedures in real time.
+        of complex structural heart diseases. Trans-oesophageal echocardiography (TOE)
+        plays a central role in guiding these procedures in real time.
       </p>
-
       <p>
         However, current clinical practice exposes echocardiographers
         to prolonged X-ray radiation and subjects patients
@@ -89,10 +85,8 @@
       </p>
     </div>
 
-    <!-- OBJECTIVES -->
     <div class="content-card highlights">
       <h2>Project Objectives</h2>
-
       <ul class="highlight-list">
         <li>Design a robotic system for <strong>remote control</strong> of the TOE probe</li>
         <li>Reduce clinician exposure to <strong>X-ray radiation</strong></li>
@@ -104,16 +98,13 @@
 
   </div>
 
-  <!-- TECHNICAL FOCUS -->
   <div class="content-card wide">
     <h2>Technical Approach</h2>
-
     <p>
       The project focuses on the mechanical and mechatronic design
       of a robotic interface capable of manipulating the TOE probe
       with high precision while preserving clinical usability.
     </p>
-
     <p>
       The robotic system is combined with image-based feedback,
       enabling intuitive and accurate control during interventional procedures.
