@@ -1640,3 +1640,26 @@ section {
   height: 110px;       /* ↑ bandeau un peu plus haut */
   padding: 16px 18px;
 }
+@media (max-width: 620px){
+  .edu-logo{
+    max-height: 54px;
+  }
+
+  .edu-header{
+    height: 96px;
+  }
+}
+/* Empêche les éléments de déborder sur mobile */
+.section-skills,
+.skills-grid,
+.skills-card,
+.skill-tags {
+  max-width: 100%;
+}
+
+.skill {
+  max-width: 100%;
+  white-space: normal;      /* autorise retour à la ligne */
+  overflow-wrap: anywhere;  /* casse proprement les mots si besoin */
+  word-break: break-word;
+}
