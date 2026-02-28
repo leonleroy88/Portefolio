@@ -1886,3 +1886,154 @@ section {
   transform: translateX(4px);
   background: rgba(37,99,235,0.15);
 }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,23,42,0.10);
+  background: rgba(255,255,255,0.55);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: transform 0.25s, background 0.25s, border-color 0.25s;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(37,99,235,0.08);
+  border-color: rgba(37,99,235,0.25);
+}
+/* =====================================================
+   AMÉLIORATIONS — à coller à la fin de style.css
+   ===================================================== */
+
+/* ── PROJECT CARDS : header plus haut et impactant ── */
+
+.project-header {
+  position: relative;
+  padding: 48px 40px 36px;   /* plus de hauteur */
+  color: white;
+  min-height: 160px;          /* hauteur minimum garantie */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Glow interne discret sur le header */
+.project-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.08) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  border-radius: 0; /* hérite du parent */
+}
+
+.project-header.vtol {
+  background: linear-gradient(135deg, #4f46e5 0%, #2563eb 60%, #0ea5e9 100%);
+}
+
+.project-header.echo {
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 60%, #059669 100%);
+}
+
+/* Titre dans le header (si tu veux le remonter) */
+.project-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Badge repositionné */
+.project-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.20);
+  color: white;
+  font-size: 0.7rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Icône déco dans le header */
+.project-header .header-icon {
+  font-size: 2.2rem;
+  opacity: 0.18;
+  position: absolute;
+  bottom: 16px;
+  right: 28px;
+  pointer-events: none;
+}
+
+/* ── HERO INTRO : mieux respiré sur mobile ── */
+
+@media (max-width: 900px) {
+  .hero-intro {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 28px;
+    gap: 28px;              /* moins d'espace entre photo et texte */
+    margin: 0 16px;         /* marges latérales */
+  }
+
+  .hero-left {
+    justify-content: center;
+  }
+
+  .profile-pic.large {
+    width: 160px;           /* un peu plus petit sur mobile */
+    height: 160px;
+  }
+
+  .hero-right .name {
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    margin: 14px auto 0;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    padding: 11px 22px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-intro {
+    padding: 28px 20px;
+    margin: 0 10px;
+  }
+
+  .profile-pic.large {
+    width: 130px;
+    height: 130px;
+  }
+
+  .hero-right .name {
+    font-size: 1.9rem;
+    letter-spacing: 1px;
+  }
+}

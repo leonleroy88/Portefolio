@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Robotic TOE Probe – Léon Leroy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .project-hero--toep {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(14,165,169,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(37,99,235,0.07) 0%, transparent 50%),
+        linear-gradient(135deg, #f8fafc 0%, #ecfeff 50%, #e0f2fe 100%);
+    }
+
+    /* Stats */
+    .project-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 32px auto 0;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 540px;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+    }
+    .stat {
+      flex: 1; padding: 18px 16px; text-align: center;
+      border-right: 1px solid rgba(15,23,42,0.07);
+      transition: background 0.25s;
+    }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(14,165,169,0.04); }
+    .stat-value {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: #0d9488;
+      line-height: 1.2;
+    }
+    .stat-label {
+      display: block; font-size: 0.70rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      color: rgba(15,23,42,0.40); margin-top: 4px;
+    }
+
+    /* Logos band */
+    .logos-band {
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; flex-wrap: wrap;
+      margin-top: 36px;
+      padding: 20px 28px;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(15,23,42,0.07);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+    }
+    .logos-band img {
+      max-height: 44px; width: auto; object-fit: contain;
+      opacity: 0.85; transition: opacity 0.2s;
+    }
+    .logos-band img:hover { opacity: 1; }
+
+    /* Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Highlight list */
+    .highlight-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .highlight-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 16px; border-radius: 12px;
+      background: white; border: 1px solid rgba(15,23,42,0.07);
+      font-size: 0.92rem; line-height: 1.5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .highlight-list li::before {
+      content: "";
+      width: 7px; height: 7px; border-radius: 50%;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      flex-shrink: 0; margin-top: 5px;
+    }
+
+    .content-card.highlights {
+      background: linear-gradient(135deg, #f8fafc, #ecfeff);
+      border: 1px solid rgba(14,165,169,0.12);
+    }
+
+    /* DOF image */
+    .dof-img {
+      display: block; width: 100%; height: auto;
+      margin-top: 20px; border-radius: 12px;
+      border: 1px solid rgba(15,23,42,0.07);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    /* Confidentiality banner */
+    .confid-banner {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px 18px; border-radius: 12px;
+      background: #fefce8; border: 1px solid #fde68a;
+      font-size: 0.85rem; color: #92400e; line-height: 1.55;
+      margin-top: 16px;
+    }
+    .confid-banner i { flex-shrink: 0; margin-top: 2px; }
+
+    /* Tech points */
+    .tech-points { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .tech-point {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 16px; border-radius: 12px;
+      background: white; border: 1px solid rgba(15,23,42,0.07);
+      font-size: 0.88rem; color: rgba(15,23,42,0.65); line-height: 1.5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .tech-point i { color: #0ea5e9; font-size: 0.8rem; margin-top: 3px; flex-shrink: 0; }
+    .tech-point strong { color: #0f172a; }
+
+    /* chip row */
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip {
+      padding: 5px 13px; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600;
+      background: rgba(14,165,169,0.07);
+      border: 1px solid rgba(14,165,169,0.22);
+      color: #0d9488;
+    }
+
+    /* Section separator */
+    .section-sep {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 4px;
+    }
+    .section-sep span.label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: rgba(15,23,42,0.35); white-space: nowrap;
+    }
+    .sep-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, rgba(15,23,42,0.12), transparent);
+    }
+
+    /* PDF row */
+    .content-row {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      gap: 24px !important;
+      flex-wrap: nowrap !important;
+      grid-column: 1 / -1 !important;
+    }
+    .content-card.pdf-card {
+      flex: 0 0 60% !important;
+      min-width: 0 !important;
+      width: 60% !important;
+      max-width: 60% !important;
+      box-sizing: border-box !important;
+    }
+    .content-card.tech-card {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      width: auto !important;
+      max-width: none !important;
+      box-sizing: border-box !important;
+    }
+    .pdf-card .pdf-container iframe {
+      width: 100% !important; height: 480px !important;
+      border-radius: 12px !important;
+      border: 1px solid rgba(15,23,42,0.08) !important;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07) !important;
+      display: block !important; margin-top: 14px;
+    }
+    @media (max-width: 768px) {
+      .content-row { flex-wrap: wrap !important; }
+      .content-card.pdf-card,
+      .content-card.tech-card { flex: 1 1 100% !important; max-width: 100% !important; width: 100% !important; }
+    }
+
+    /* Footer */
+    .page-footer { text-align: center; padding: 20px 20px 80px; }
+    .page-footer p { color: rgba(15,23,42,0.45); font-size: 0.9rem; margin-bottom: 20px; }
+    .footer-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 28px; border-radius: 999px;
+      text-decoration: none; font-weight: 600;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      color: white; box-shadow: 0 8px 28px rgba(14,165,169,0.30);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .footer-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(14,165,169,0.42); }
+  </style>
+</head>
+<body class="project-page">
+
+<nav class="navbar">
+  <div class="brand">
+    <div class="logo-box">LL</div>
+    <span class="logo-text">Léon Leroy</span>
+  </div>
+  <a href="index.html" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+  </a>
+</nav>
+
+<section class="project-hero project-hero--toep">
+  <div class="project-hero-card">
+
+    <div class="project-tags">
+      <span class="project-chip">Biomedical Robotics</span>
+      <span class="project-chip featured">RESEARCH</span>
+    </div>
+
+    <h1 class="project-title">Robotization of a Trans-Oesophageal Echocardiography Probe</h1>
+
+    <p class="project-intro">
+      Research project focused on the development of a robotic assistance system
+      for remote manipulation of a trans-oesophageal echocardiography (TOE) probe.
+      The system aims to enhance safety, ergonomics, and precision in interventional
+      cardiology, while reducing clinician exposure to ionizing radiation.
+    </p>
+
+    <div class="project-stats">
+      <div class="stat">
+        <span class="stat-value">Medical Robotics</span>
+        <span class="stat-label">Application Field</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">Remote Control</span>
+        <span class="stat-label">System Approach</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">Image-Guided</span>
+        <span class="stat-label">Navigation</span>
+      </div>
+    </div>
+
+    <div class="logos-band">
+      <img src="assets/images/logo_icube.png" alt="ICube Logo">
+      <img src="assets/images/ihu_logo.jpg" alt="IHU Logo">
+      <img src="assets/images/Université_de_Strasbourg.png" alt="Université de Strasbourg">
+      <img src="assets/images/Faculte_Medecine_Etroit_Logo_50.png" alt="Faculté de Médecine">
+    </div>
+
+  </div>
+</section>
+
+<section class="project-content">
+
+  <div class="section-sep reveal">
+    <span class="label">Project Details</span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="project-grid">
+
+    <div class="content-card reveal">
+      <h2>Project Context</h2>
+      <p>
+        Trans-oesophageal echocardiography (TOE) is a key imaging modality
+        for guiding minimally invasive structural heart interventions.
+        Its use in interventional settings requires continuous and precise
+        probe manipulation under fluoroscopic guidance.
+      </p>
+      <p>
+        The objective was to robotically control the four main degrees of freedom
+        of the TOE probe to closely replicate the clinician's manual gestures.
+        The architecture was defined based on clinical observations during
+        real MitraClip interventions.
+      </p>
+
+      <div class="chip-row">
+        <span class="chip">TOE Probe</span>
+        <span class="chip">4-DOF Control</span>
+        <span class="chip">MitraClip</span>
+        <span class="chip">Fluoroscopy</span>
+        <span class="chip">IHU Strasbourg</span>
+      </div>
+
+      <img src="assets/images/dof.png" alt="Four degrees of freedom of the TOE probe" class="dof-img">
+    </div>
+
+    <div class="content-card highlights reveal">
+      <h2>Project Objectives</h2>
+      <ul class="highlight-list">
+        <li>Robotic assistance for <strong>remote TOE probe manipulation</strong></li>
+        <li>Reduce clinician exposure to <strong>X-ray radiation</strong></li>
+        <li>Improve ergonomics and patient safety during long procedures</li>
+        <li><strong>Repeatable and stable</strong> probe positioning</li>
+        <li>Integration with <strong>image-based guidance</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="section-sep reveal" style="margin-top: 8px;">
+    <span class="label">Presentation & Technical Approach</span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="content-row">
+
+    <div class="content-card pdf-card reveal">
+      <h2>Project Presentation <small style="font-size:0.7rem;font-weight:500;color:rgba(15,23,42,0.4);margin-left:8px;">Preview — 8 slides</small></h2>
+      <p>For confidentiality reasons, only the first 8 slides are shown.</p>
+      <div class="pdf-container">
+        <iframe src="assets/images/Presentation_confi.pdf" width="100%" height="480px" style="border:none;"></iframe>
+      </div>
+    </div>
+
+    <div class="content-card tech-card reveal">
+      <h2>Technical Approach</h2>
+      <p>
+        Robotic interface engineered to replicate the clinician's four manual
+        degrees of freedom with precision and safety.
+      </p>
+
+      <div class="tech-points">
+        <div class="tech-point">
+          <i class="fa-solid fa-microchip"></i>
+          <span><strong>Mechanical design</strong> tailored to clinical ergonomics and probe geometry</span>
+        </div>
+        <div class="tech-point">
+          <i class="fa-solid fa-camera"></i>
+          <span><strong>Image-based feedback</strong> for real-time probe positioning guidance</span>
+        </div>
+        <div class="tech-point">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Focus on <strong>safety</strong>, force control and clinical workflow integration</span>
+        </div>
+        <div class="tech-point">
+          <i class="fa-solid fa-arrows-up-down-left-right"></i>
+          <span>Control of <strong>4 DOF</strong> : anteflexion, rotation, insertion and lateral flex</span>
+        </div>
+      </div>
+
+      <div class="confid-banner">
+        <i class="fa-solid fa-lock"></i>
+        Developed under strict confidentiality in collaboration with IHU Strasbourg and clinical partners.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="page-footer">
+  <p>Interested in this research or want to discuss medical robotics?</p>
+  <a href="index.html" class="footer-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+  </a>
+</div>
+
+<script src="js/scroll.js"></script>
+</body>
+</html>

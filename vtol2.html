@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VTOL Drone Project – Léon Leroy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .project-hero--vtol {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(79,70,229,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(37,99,235,0.07) 0%, transparent 50%),
+        linear-gradient(135deg, #f8fafc 0%, #eef2f7 50%, #e0e7ff 100%);
+    }
+
+    .vtol-img-wrap {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+    }
+    .vtol-img-wrap img {
+      max-width: 80%; height: auto;
+      filter: drop-shadow(0 30px 60px rgba(37,99,235,0.20));
+      animation: float 7s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    .project-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 32px auto 0;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 480px;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+    }
+    .stat {
+      flex: 1; padding: 18px 20px; text-align: center;
+      border-right: 1px solid rgba(15,23,42,0.07);
+      transition: background 0.25s;
+    }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(37,99,235,0.04); }
+    .stat-value {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem; font-weight: 700; color: #2563eb;
+    }
+    .stat-label {
+      display: block; font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      color: rgba(15,23,42,0.42); margin-top: 3px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .vtol-img-wrap img { max-width: 100%; }
+    }
+
+    .highlight-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .highlight-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 16px; border-radius: 12px;
+      background: white; border: 1px solid rgba(15,23,42,0.07);
+      font-size: 0.92rem; line-height: 1.5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .highlight-list li::before {
+      content: "";
+      width: 7px; height: 7px; border-radius: 50%;
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      flex-shrink: 0; margin-top: 5px;
+    }
+
+    .content-card.highlights {
+      background: linear-gradient(135deg, #f8fafc, #eef2f7);
+      border: 1px solid rgba(37,99,235,0.10);
+    }
+
+    .video-container {
+      margin-top: 22px;
+      position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .video-container iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+
+    .nacelle-img {
+      display: block; max-width: 60%; height: auto;
+      margin: 24px auto 0; border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+      border: 1px solid rgba(15,23,42,0.07);
+    }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip {
+      padding: 5px 13px; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600;
+      background: rgba(37,99,235,0.07);
+      border: 1px solid rgba(37,99,235,0.20);
+      color: #1e40af;
+    }
+
+    .section-sep {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 4px;
+    }
+    .section-sep span.label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: rgba(15,23,42,0.35); white-space: nowrap;
+    }
+    .sep-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, rgba(15,23,42,0.12), transparent);
+    }
+
+    .page-footer { text-align: center; padding: 20px 20px 80px; }
+    .page-footer p { color: rgba(15,23,42,0.45); font-size: 0.9rem; margin-bottom: 20px; }
+    .footer-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 28px; border-radius: 999px;
+      text-decoration: none; font-weight: 600;
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      color: white; box-shadow: 0 8px 28px rgba(37,99,235,0.30);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .footer-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(37,99,235,0.42); }
+  </style>
+</head>
+<body class="project-page">
+
+<nav class="navbar">
+  <div class="brand">
+    <div class="logo-box">LL</div>
+    <span class="logo-text">Léon Leroy</span>
+  </div>
+  <a href="index.html" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+  </a>
+</nav>
+
+<section class="project-hero project-hero--vtol">
+  <div class="project-hero-card">
+
+    <div class="project-tags">
+      <span class="project-chip">Aerospace</span>
+      <span class="project-chip featured">FEATURED</span>
+    </div>
+
+    <h1 class="project-title">VTOL Drone Design Project</h1>
+
+    <p class="project-intro">
+      Complete mechanical design of a VTOL (Vertical Take-Off and Landing) drone,
+      with a strong focus on aerodynamics, CAD modeling and system integration.
+    </p>
+
+    <div class="project-stats">
+      <div class="stat">
+        <span class="stat-value">3 m</span>
+        <span class="stat-label">Wingspan</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">500 g</span>
+        <span class="stat-label">Payload</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">4.1 kg</span>
+        <span class="stat-label">Total Weight</span>
+      </div>
+    </div>
+
+    <div class="vtol-img-wrap">
+      <img src="assets/images/vtol_entier.png" alt="VTOL Drone Full Design">
+    </div>
+
+  </div>
+</section>
+
+<section class="project-content">
+
+  <div class="section-sep reveal">
+    <span class="label">Project Details</span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="project-grid">
+
+    <div class="content-card reveal">
+      <h2>Overview</h2>
+      <p>
+        This project involved the complete mechanical design of a VTOL drone,
+        from early concept to detailed CAD models. Emphasis was placed on
+        aerodynamic efficiency, modularity and system-level integration.
+      </p>
+      <p>
+        Carried out using professional engineering tools and simulation
+        environments, combining structural analysis with kinematic modeling
+        to validate the design before prototyping.
+      </p>
+      <div class="chip-row">
+        <span class="chip">CREO</span>
+        <span class="chip">MATLAB</span>
+        <span class="chip">MotionView</span>
+        <span class="chip">CAD</span>
+        <span class="chip">Aerodynamics</span>
+      </div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/PgAF8_b8e4Q"
+          title="VTOL Drone Project Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="content-card highlights reveal">
+      <h2>Key Highlights</h2>
+      <ul class="highlight-list">
+        <li>Full mechanical design using <strong>CREO Parametric</strong></li>
+        <li>Nacelle and fuselage CAD development</li>
+        <li>Aerodynamic optimization workflow</li>
+        <li>Simulation with <strong>MATLAB</strong> & MotionView</li>
+        <li>Full mechanical system integration</li>
+        <li>Structural & kinematic analysis</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="section-sep reveal" style="margin-top: 8px;">
+    <span class="label">Design Focus</span>
+    <span class="sep-line"></span>
+  </div>
+
+  <div class="content-card wide reveal">
+    <h2>Nacelle Design</h2>
+    <p>
+      The nacelle was designed to balance aerodynamic performance,
+      structural robustness and ease of integration. Several design
+      iterations were evaluated through simulations and CAD refinements,
+      leading to an optimized geometry that minimizes drag while ensuring
+      reliable motor mounting.
+    </p>
+    <img src="assets/images/steam.png" alt="VTOL Nacelle Design" class="nacelle-img">
+  </div>
+
+</section>
+
+<div class="page-footer">
+  <p>Interested in this project or want to discuss aerospace engineering?</p>
+  <a href="index.html" class="footer-btn">
+    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+  </a>
+</div>
+
+<script src="js/scroll.js"></script>
+</body>
+</html>
