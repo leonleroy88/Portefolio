@@ -2037,3 +2037,55 @@ section {
     letter-spacing: 1px;
   }
 }
+.pdf-carousel { display: flex; flex-direction: column; gap: 10px; }
+
+.pdf-slides { position: relative; width: 100%; }
+
+.pdf-slide {
+  display: none;
+  width: 100%; height: 320px;
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.04);
+}
+.pdf-slide.active { display: block; }
+.pdf-slide iframe { width: 100%; height: 100%; border: none; }
+
+/* Label + counter */
+.pdf-label-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 4px;
+}
+.pdf-current-label {
+  font-size: 0.75rem; font-weight: 600;
+  color: rgba(255,255,255,0.70);
+  letter-spacing: 0.4px;
+}
+.pdf-counter {
+  font-size: 0.72rem; font-weight: 500;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Controls row */
+.pdf-controls {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+}
+
+.pdf-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+  color: white; cursor: pointer; font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.pdf-btn:hover { background: rgba(255,255,255,0.22); transform: scale(1.08); }
+
+.pdf-dots { display: flex; gap: 7px; }
+.pdf-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer; transition: background 0.25s, transform 0.25s;
+}
+.pdf-dot.active { background: white; transform: scale(1.3); }
